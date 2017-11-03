@@ -1,23 +1,60 @@
 <html>
 <head>
 <style>
-body { background:url("images/space_bg.jpg") fixed black; color: #f0f0f0; font: 2em "Oxygen Mono", sans-serif; border:0px; padding: 0px; margin:0px; }
+body { background:url("images/space_bg.jpg") fixed black; background-size: 100% auto; color: #f0f0f0; font: 2em "Oxygen Mono", sans-serif; border:0px; padding: 0px; margin:0px; }
 #header {padding: 2%; background-color:rgba(0, 0, 0, 0.5); border-bottom: 4px solid #ccff00;}
 #bar {padding: 2%; float: right; width: 6%; background-color:rgba(0,0,0,0.5); border-radius: 10px 0px 0px 10px;border-left: 4px solid #ccff01; border-top: 4px solid #ccff00; border-bottom: 4px solid #ccff00; }
 #bar img {margin-top: 10%; width: 100%; height: auto;}
-#body { padding: 2%; width: 84%; background-color:rgba(0,0,0,0.5); border-radius: 0px 10px 10px 0px; border-right: 4px solid #ccff01; border-top: 4px solid #ccff00; border-bottom: 4px solid #ccff00; }
+#post { padding: 2%; float:left; width: 84%; min-height: 100%; background-color:rgba(0,0,0,0.5); border-radius: 0px 10px 10px 0px; border-right: 4px solid #ccff01; border-top: 4px solid #ccff00; border-bottom: 4px solid #ccff00; }
 #footer { padding: 2%; text-align: center; font-size: 0.7em;}
 a {color: white;}
-
+/* Vendor prefixes removed for readability */
+.cube .front {
+	/* No X/Y rotation needed since the front is */
+	/* already facing forward. */
+}
+.cube .back {
+	transform: rotateX( -180deg );
+}
+.cube .right {
+	transform: rotateY( 90deg );
+}
+.cube .left {
+	transform: rotateY( -90deg );
+}
+.cube .top {
+	transform: rotateX( 90deg );
+}
+.cube .bottom {
+	transform: rotateX( -90deg );
+}
 </style>
+
+<script type="text/javascript">
+
+/**
+ * @param node {DOMNode|string} The node to turn into the cube 
+ *             or the id attribute of the node
+ * @param images {Array} An Array of 6 Strings containing the URLs 
+ *               of the images to place in the cube
+ */
+PictureCube = function( node, images ) { };
+
+</script>
+
 </head>
 <body>
 <div id="header">
 <h1>Chaos, in space...</h1>
 </div>
 <br>
+<div id="body">
+<div id="post">
+Some news may go here, or other...
+
+</div>
 <div id="bar">
-<img src="images/rescue.png" alt="Recovery"/>
+<img src="images/rescue.png" alt="Recovery" />
 <img src="images/code.png" alt="Code" />
 <img src="images/network.png" alt="Network Administration"/>
 <img src="images/boat.png" alt="Marine"/>
@@ -28,9 +65,18 @@ a {color: white;}
 <img src="images/lock.png" alt="Security" />
 <img src="images/mad_science.png" alt="Mad Science"/>
 </div>
-<div id="body">
-Some news may go here, or other...
-
+<!--
+<div class="PictureCube-container">
+	<div class="cube show-front">
+		<figure class="front"><img src="1.jpg" /></figure>
+		<figure class="back"><img src="2.jpg" /></figure>
+		<figure class="right"><img src="3.jpg" /></figure>
+		<figure class="left"><img src="4.jpg" /></figure>
+		<figure class="top"><img src="5.jpg" /></figure>
+		<figure class="bottom"><img src="6.jpg" /></figure>
+	</div>
+</div>
+-->
 </div>
 <div id="footer">
 Copyright 2017 <a href="mailto:order@chaosin.space">Chaosin.space</a>
